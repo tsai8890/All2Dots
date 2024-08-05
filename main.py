@@ -51,10 +51,13 @@ else:
             brailHelperList=[0x80,0x40,0x20,0x10,0x8,0x4,0x2,0x1]
             brailNum=0x2800
 
+            dots = 0
             for i in range(8):
                 if brailList[i] == 1:
                     brailNum += brailHelperList[i]
-            return chr(brailNum)
+                    dots += 1
+            
+            return chr(brailNum) if dots > 0 else ' '
 
 
     image_arr = asarray(image)
