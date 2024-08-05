@@ -56,7 +56,13 @@
 1. Convert the specified image to dot-based text
     ```bash
     cd Image2Dots
-    python3 main.py [file_path_to_the_image]
+    python3 main.py <file_path_to_the_image> [output_env]
+    
+    # ex: python3 main.py ./images/lul.jpg terminal
+
+    # output_env:
+    #    terminal       for terminal windows, default option
+    #    line           for the LINE chatting window
     ```
 <br>
 
