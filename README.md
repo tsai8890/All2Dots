@@ -139,7 +139,5 @@ Project Link: [https://github.com/tsai8890/LeetTimer](https://github.com/tsai889
 ## Acknowledgments
 * [Best README Template](https://github.com/othneildrew/Best-README-Template)
 * [Electron-Markdownify's README](https://github.com/amitmerchant1990/electron-markdownify/blob/master/README.md)
-* [A good tutorial for Google Extension](https://medium.com/@alexian853/%E5%BE%9E%E9%A0%AD%E9%96%8B%E5%A7%8B%E5%AD%B8%E7%BF%92%E9%96%8B%E7%99%BC-chrome-extension-v3-%E7%89%88%E6%9C%AC-96d7fdfc00d1)
-* [How to release Google Extension](https://alex-ian.me/2022-04-22-publish-chrome-extension)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
