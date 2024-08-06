@@ -3,39 +3,74 @@ from numpy import asarray
 import numpy as np
 from PIL import Image
 
-if len(sys.argv) < 2:
-    print('''
-Usage:
-    python3 main.py <filepath> [output_env]
 
-output_env:
-   # This parameter is not case-sensitive
-   terminal         for terminal windows, default option
-   line             for the LINE chatting window
-''')
+manual_str = '''
+Usage:
+    python3 main.py <filepath> [options]
+
+Options:
+    -s <style>          Output style, other format-related params will be ignored if this option is specified. 
+                        ['terminal', 'line']
+                        
+    -w <width>          Maximal width for each line
+                        (default: 100)
+
+    -b <background>     Light or dark background mode
+                        ['dark', 'light']
+                        (default: 'dark')
+    
+    -t <threshold>      Threshold for converting grayscale image to binary image
+                        (default: 132)
+'''
+
+
+if len(sys.argv) < 2:
+    print(manual_str)
 else:
     # Commandline parameters parsing
     file_path = sys.argv[1]
-    output_env = sys.argv[2].lower() if len(sys.argv) >= 3 else 'terminal'
+    param_dict = dict()
 
-    # Output config setting
-    config_options = {
-        'terminal': {
+    for i in range(2, len(sys.argv) - 1, 2):
+        if '-' != sys.argv[i][0] or len(sys.argv[i]) != 2:
+            print(manual_str)
+            exit(-1)
+        else:
+            param_dict[sys.argv[i][1:]] = sys.argv[i+1]
+
+
+    MAX_R = None
+    threshold = None
+    dot_white = None
+    
+    if 's' in param_dict:
+        config_options = {
+            'terminal': {
+                'MAX_R': 100,
+                'dot_white': True,
+                'threshold': 132,
+            },
+            'line': {
+                'MAX_R': 37,
+                'dot_white': True,
+                'threshold': 132,
+            }
+        }
+        config = config_options[param_dict['s']]
+
+        MAX_R = config['MAX_R']
+        dot_white = config['dot_white']
+        threshold = config['threshold']
+    else:
+        default_config = {
             'MAX_R': 100,
             'dot_white': True,
             'threshold': 132,
-        },
-        'line': {
-            'MAX_R': 37,
-            'dot_white': True,
-            'threshold': 132,
         }
-    }
-    config = config_options[output_env]
+        MAX_R = int(param_dict['w']) if 'w' in param_dict else default_config['MAX_R']
+        dot_white = param_dict['b'] == 'dark' if 'b' in param_dict else default_config['dot_white']
+        threshold = int(param_dict['t']) if 't' in param_dict else default_config['threshold']
 
-    MAX_R = config['MAX_R']
-    threshold = config['threshold']
-    dot_white = config['dot_white']
 
     # Resize the image
     image = Image.open(f'{sys.argv[1]}').convert('L')
