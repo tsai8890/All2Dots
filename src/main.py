@@ -51,7 +51,6 @@ else:
     if 'f' in param_dict:
         image = Image.open(f'{sys.argv[1]}').convert('L')
     elif 't' in param_dict:
-        print('good')
         filepath = 'text.png'
         text2image(param_dict['t'], font_size=50, output_path=filepath)
         image = Image.open(filepath).convert('L')
