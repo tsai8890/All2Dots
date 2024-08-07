@@ -56,24 +56,30 @@
 1. Convert the specified image to dot-based text
     ```bash
     cd Image2Dots
-    python3 main.py <filepath> [options]
+    python3 src/main.py <target> [options]
     
-    # Ex: python3 main.py ./images/shiba.jpg -s terminal
-    # Ex: python3 main.py ./images/shiba.jpg -w 100 -b light -t 110
+    # Ex: python3 src/main.py -t "你好"
+    # Ex: python3 src/main.py -t "你好" -s line
+    # Ex: python3 src/main.py -f ./images/shiba.jpg
+    # Ex: python3 src/main.py -f ./images/shiba.jpg -w 100 -b light -t 110
 
+    # Target:
+    #    -f <filepath>       Convert any image to dot-based text
+    #    -t <text>           Convert any text to vertically-aligned dot-based text
+    #    
     # Options:
-    #    -s <style>          Output style, other format-related params will be ignored if this option is specified.
+    #    -s <style>          Output style, other format-related params will be ignored if this option is specified. 
     #                        ['terminal', 'line']
-    #
+    #                        
     #    -w <width>          Maximal width for each line
     #                        (default: 100)
     #
     #    -b <background>     Light or dark background mode
     #                        ['dark', 'light']
     #                        (default: 'dark')
-    #
-    #    -t <threshold>      Threshold for converting grayscale image to binary image
-    #                        (default: 132)   
+    #    
+    #    -T <threshold>      Threshold for converting grayscale image to binary image
+    #                        (default: 132)
     ```
 <br>
 
