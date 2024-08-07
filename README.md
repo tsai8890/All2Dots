@@ -26,8 +26,10 @@
 ## About The Project
 
 ### Key Features
+* Text to dots
+    * Convert any text to vertically-aligned dot-based text.
 * Image to dots
-    * Convert any input image to dot-based text using Braille Pattern Series.
+    * Convert any image to dot-based text.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
