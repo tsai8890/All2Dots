@@ -16,7 +16,7 @@
   <a href="#usage">Usage</a> •
   <a href="#roadmap">Roadmap</a> •
   <a href="#contributing">Contributing</a> •
-  <a href="#contact">Contact</a>
+  <a href="#contact">Contact</a> •
   <a href="#acknowledgments">Acknowledgments</a>
 </p>
 <br>
