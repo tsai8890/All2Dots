@@ -3,7 +3,7 @@
 
 <h1 align="center">
   <br>
-  Image2Dots
+  All2Dots
   <br>
 </h1>
 
@@ -17,7 +17,7 @@
   <a href="#roadmap">Roadmap</a> •
   <a href="#contributing">Contributing</a> •
   <a href="#contact">Contact</a>
-  <!-- <a href="#acknowledgments">Acknowledgments</a> -->
+  <a href="#acknowledgments">Acknowledgments</a>
 </p>
 <br>
 
@@ -42,11 +42,11 @@
 ### Prerequisites
 1. Clone the repo
     ```bash
-    git clone https://github.com/tsai8890/Image2Dots.git
+    git clone https://github.com/tsai8890/All2Dots.git
     ```
 2. Install python packages
     ```bash
-    cd Image2Dots
+    cd All2Dots
     pip3 install -r requirements.txt
     ```
 
@@ -57,11 +57,11 @@
 ## Usage
 1. Convert the specified image to dot-based text
     ```bash
-    cd Image2Dots
+    cd All2Dots
     python3 src/main.py <target> [options]
     
-    # Ex: python3 src/main.py -t "你好"
-    # Ex: python3 src/main.py -t "你好" -s line
+    # Ex: python3 src/main.py -t "早安"
+    # Ex: python3 src/main.py -t "早安" -s line
     # Ex: python3 src/main.py -f ./images/shiba.jpg
     # Ex: python3 src/main.py -f ./images/shiba.jpg -w 100 -b light -t 110
 
@@ -86,6 +86,27 @@
 <br>
 
 2. The result will be directly shown on your terminal
+    ```bash
+    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⢸⣟⠛⠛⠛⠛⠛⠛⠛⠛⢻⡇⠀⠀⠀
+    ⠀⠀⠀⢸⣿⣤⣤⣤⣤⣤⣤⣤⣤⣼⡇⠀⠀⠀
+    ⠀⠀⠀⢸⣟⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀
+    ⠀⠀⠀⠘⠛⠛⠛⠻⢿⡟⠛⠛⠛⠛⠃⠀⠀⠀
+    ⠀⢠⣤⣤⣤⣤⣤⣤⣼⣧⣤⣤⣤⣤⣤⣄⡀⠀
+    ⠀⠈⠉⠉⠉⠉⠉⠉⢹⡏⠉⠉⠉⠉⠉⠉⠁⠀
+    ⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠀⠠⢶⡄⠀⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠠⣾⡿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⣟⠀⠀
+    ⠀⠠⣿⠇⠀⠀⠀⣰⡗⠀⠀⠀⠀⠀⠠⣟⠀⠀
+    ⠀⢠⣤⣤⣤⣤⣼⣿⣤⣤⣤⣤⣤⣤⣤⣤⡄⠀
+    ⠀⠀⠀⠀⢠⣼⠟⠀⠀⠀⠀⣸⡟⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠺⠿⢶⣤⣄⣠⣴⠟⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⢀⣨⣽⠿⠿⣶⣄⣀⠀⠀⠀⠀
+    ⠀⠠⢶⠶⠶⠟⠛⠋⠁⠀⠀⠀⠉⠻⠿⡖⠀⠀
+    ```
+
     ```bash
     ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
     ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
@@ -145,27 +166,6 @@
     ⣿⣿⣿⣿⣗                                       ⢹⣿⣿⣿⣿⣿⣿
     ⣿⣿⣿⣿⣿⡆                                      ⢸⣿⣿⣿⣿⣿⣿
 
-    ```
-
-    ```bash
-    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-    ⠀⠀⠀⢸⣟⠛⠛⠛⠛⠛⠛⠛⠛⢻⡇⠀⠀⠀
-    ⠀⠀⠀⢸⣿⣤⣤⣤⣤⣤⣤⣤⣤⣼⡇⠀⠀⠀
-    ⠀⠀⠀⢸⣟⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀
-    ⠀⠀⠀⠘⠛⠛⠛⠻⢿⡟⠛⠛⠛⠛⠃⠀⠀⠀
-    ⠀⢠⣤⣤⣤⣤⣤⣤⣼⣧⣤⣤⣤⣤⣤⣄⡀⠀
-    ⠀⠈⠉⠉⠉⠉⠉⠉⢹⡏⠉⠉⠉⠉⠉⠉⠁⠀
-    ⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀
-    ⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀
-    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-    ⠀⠀⠀⠀⠀⠀⠀⠠⢶⡄⠀⠀⠀⠀⠀⠀⠀⠀
-    ⠀⠠⣾⡿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⣟⠀⠀
-    ⠀⠠⣿⠇⠀⠀⠀⣰⡗⠀⠀⠀⠀⠀⠠⣟⠀⠀
-    ⠀⢠⣤⣤⣤⣤⣼⣿⣤⣤⣤⣤⣤⣤⣤⣤⡄⠀
-    ⠀⠀⠀⠀⢠⣼⠟⠀⠀⠀⠀⣸⡟⠀⠀⠀⠀⠀
-    ⠀⠀⠀⠀⠺⠿⢶⣤⣄⣠⣴⠟⠀⠀⠀⠀⠀⠀
-    ⠀⠀⠀⠀⠀⠀⢀⣨⣽⠿⠿⣶⣄⣀⠀⠀⠀⠀
-    ⠀⠠⢶⠶⠶⠟⠛⠋⠁⠀⠀⠀⠉⠻⠿⡖⠀⠀
     ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
