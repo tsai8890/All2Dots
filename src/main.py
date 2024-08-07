@@ -3,11 +3,16 @@ from numpy import asarray
 import numpy as np
 from PIL import Image
 
+from text2image import text2image
 
 manual_str = '''
 Usage:
-    python3 main.py <filepath> [options]
+    python3 main.py <target> [options]
 
+Target:
+    -f <filepath>       Convert any image to dot-based text
+    -t <text>           Convert any text to vertically-aligned dot-based text
+    
 Options:
     -s <style>          Output style, other format-related params will be ignored if this option is specified. 
                         ['terminal', 'line']
@@ -19,7 +24,7 @@ Options:
                         ['dark', 'light']
                         (default: 'dark')
     
-    -t <threshold>      Threshold for converting grayscale image to binary image
+    -T <threshold>      Threshold for converting grayscale image to binary image
                         (default: 132)
 '''
 
@@ -28,21 +33,33 @@ if len(sys.argv) < 2:
     print(manual_str)
 else:
     # Commandline parameters parsing
-    file_path = sys.argv[1]
     param_dict = dict()
-
-    for i in range(2, len(sys.argv) - 1, 2):
+    for i in range(1, len(sys.argv) - 1, 2):
         if '-' != sys.argv[i][0] or len(sys.argv[i]) != 2:
             print(manual_str)
             exit(-1)
         else:
             param_dict[sys.argv[i][1:]] = sys.argv[i+1]
 
-
+    # All customized parameters
     MAX_R = None
     threshold = None
     dot_white = None
-    
+    image = None
+
+    # Parse the target
+    if 'f' in param_dict:
+        image = Image.open(f'{sys.argv[1]}').convert('L')
+    elif 't' in param_dict:
+        print('good')
+        filepath = 'text.png'
+        text2image(param_dict['t'], font_size=50, output_path=filepath)
+        image = Image.open(filepath).convert('L')
+    else:
+        print(manual_str)
+        exit(-1)
+
+    # Parse other arguments
     if 's' in param_dict:
         config_options = {
             'terminal': {
@@ -52,7 +69,7 @@ else:
             },
             'line': {
                 'MAX_R': 37,
-                'dot_white': True,
+                'dot_white': False,
                 'threshold': 132,
             }
         }
@@ -69,13 +86,15 @@ else:
         }
         MAX_R = int(param_dict['w']) if 'w' in param_dict else default_config['MAX_R']
         dot_white = param_dict['b'] == 'dark' if 'b' in param_dict else default_config['dot_white']
-        threshold = int(param_dict['t']) if 't' in param_dict else default_config['threshold']
-
+        threshold = int(param_dict['T']) if 'T' in param_dict else default_config['threshold']
 
     # Resize the image
-    image = Image.open(f'{sys.argv[1]}').convert('L')
     R, C = image.size
-    image = image.resize([R // (R // MAX_R), C // (R // MAX_R)])
+    if MAX_R <= R:
+        image = image.resize([MAX_R, int(C * (MAX_R / R))])
+    else:
+        ratio = MAX_R // R
+        image = image.resize([R * ratio, C * ratio])
 
 
     def point2brail(brailList) -> str:
