@@ -27,9 +27,9 @@
 
 ### Key Features
 * Text to dots
-    * Convert any text to vertically-aligned dot-based text.
+    * Convert input text to vertically-aligned dot-based text.
 * Image to dots
-    * Convert any image to dot-based text.
+    * Convert input image to dot-based text.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -173,7 +173,8 @@
 
 <!-- ROADMAP -->
 ## Roadmap
-- [x] Convert input images to dot-based text
+- [x] Convert input image to dot-based text
+- [x] Convert input text to dot-based text
 - [x] Customized parameters for converting images
 - [ ] A good GUI
 
